@@ -1,0 +1,6 @@
+--colour
+--loadby mtime
+--reverse
+--format failing_examples:tmp/failed_specs.txt
+--format progress
+--debugger
