@@ -24,8 +24,10 @@ def to_words(number)
   result.strip
 end
 
-huge_string = ''
-(1 .. 1000).each do |number|
-  huge_string += to_words(number)
+if __FILE__ == $0
+  huge_string = ''
+  (1 .. 1000).each do |number|
+    huge_string += to_words(number)
+  end
+  puts huge_string.gsub(' ', '').length
 end
-puts huge_string.gsub(' ', '').length

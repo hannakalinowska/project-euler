@@ -9,12 +9,14 @@ def divisor_count_for(number)
   count
 end
 
-number_divisors = 500
+if __FILE__ == $0
+  number_divisors = 500
 
-number = 1
-current_integer = 2
-while (count = divisor_count_for(number)) <= number_divisors do
-  number += current_integer
-  current_integer += 1
+  number = 1
+  current_integer = 2
+  while (count = divisor_count_for(number)) <= number_divisors do
+    number += current_integer
+    current_integer += 1
+  end
+  puts number
 end
-puts number

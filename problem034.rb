@@ -9,11 +9,13 @@ def factorial_sum(number)
   number.to_s.chars.map {|digit| factorial(digit)}.reduce(:+)
 end
 
-sum = 0
-10.upto(9_999_999) do |number|
-  if number == factorial_sum(number)
-    sum += number
+if __FILE__ == $0
+  sum = 0
+  10.upto(9_999_999) do |number|
+    if number == factorial_sum(number)
+      sum += number
+    end
   end
-end
 
-puts sum
+  puts sum
+end

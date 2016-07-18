@@ -32,16 +32,18 @@ class Result
   end
 end
 
-result = Result.new(nil, nil, 0)
+if __FILE__ == $0
+  result = Result.new(nil, nil, 0)
 
-(-1000 .. 1000).each do |a|
-  (-1000 .. 1000).each do |b|
-    length = ConsecutivePrimes.new(a, b).length
-    if length > result.length
-      result = Result.new(a, b, length)
+  (-1000 .. 1000).each do |a|
+    (-1000 .. 1000).each do |b|
+      length = ConsecutivePrimes.new(a, b).length
+      if length > result.length
+        result = Result.new(a, b, length)
+      end
     end
   end
-end
 
-puts result.a, result.b, result.length
-puts result.a * result.b
+  puts result.a, result.b, result.length
+  puts result.a * result.b
+end

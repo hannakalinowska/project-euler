@@ -8,19 +8,21 @@ def step_for(n)
   end
 end
 
-chain_length = 0
-max_chain_length, max_number = 0, 0
-
-2.upto(1_000_000) do |start_number|
-  number = start_number
+if __FILE__ == $0
   chain_length = 0
-  while number > 1 do
-    number = step_for(number)
-    chain_length += 1
-  end
-  if chain_length > max_chain_length
-    max_chain_length, max_number = chain_length, start_number
-  end
-end
+  max_chain_length, max_number = 0, 0
 
-puts "#{max_number} (#{max_chain_length})"
+  2.upto(1_000_000) do |start_number|
+    number = start_number
+    chain_length = 0
+    while number > 1 do
+      number = step_for(number)
+      chain_length += 1
+    end
+    if chain_length > max_chain_length
+      max_chain_length, max_number = chain_length, start_number
+    end
+  end
+
+  puts "#{max_number} (#{max_chain_length})"
+end

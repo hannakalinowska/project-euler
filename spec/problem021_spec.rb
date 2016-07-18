@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+require 'spec_helper'
 require 'problem021'
 
 describe '#divisors_for(number)' do

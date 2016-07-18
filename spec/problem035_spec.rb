@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+require 'spec_helper'
 require 'problem035'
 
 describe Array do
@@ -23,13 +23,13 @@ end
 describe '#circular_prime?' do
   it "returns true for circular primes" do
     [2, 3, 5, 7, 11, 13, 17, 31, 37].each do |number|
-      circular_prime?(number).should be_true
+      circular_prime?(number).should be_truthy
     end
   end
 
   it "returns false for non-circular primes" do
     [4, 8, 12, 14, 15].each do |number|
-      circular_prime?(number).should be_false
+      circular_prime?(number).should be_falsey
     end
   end
 end

@@ -10,11 +10,13 @@ def fib(i)
   @step_2 = prev_step + @step_2
 end
 
-sum = 0
-fib = 0
-1.upto(4_000) do |i|
-  fib = fib(i)
-  sum += fib if fib.even? && fib < 4_000_000
-  break if fib >= 4_000_000
+if __FILE__ == $0
+  sum = 0
+  fib = 0
+  1.upto(4_000) do |i|
+    fib = fib(i)
+    sum += fib if fib.even? && fib < 4_000_000
+    break if fib >= 4_000_000
+  end
+  puts sum
 end
-puts sum

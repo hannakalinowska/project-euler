@@ -15,11 +15,13 @@ def amicable_for(number)
   amicable_divisors.reduce(&:+) == number ? amicable : nil
 end
 
-sum = 0
+if __FILE__ == $0
+  sum = 0
 
-2.upto(10000) do |number|
-  amicable = amicable_for(number)
-  sum = sum + number + amicable if amicable && amicable > number
+  2.upto(10000) do |number|
+    amicable = amicable_for(number)
+    sum = sum + number + amicable if amicable && amicable > number
+  end
+
+  puts sum
 end
-
-puts sum

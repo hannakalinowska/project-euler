@@ -48,16 +48,18 @@ class Result
   end
 end
 
-result = Result.new(0, 0)
-known_lengths = []
+if __FILE__ == $0
+  result = Result.new(0, 0)
+  known_lengths = []
 
-1.upto(1_000_000) do |n|
-  length = Collatz.new(n, known_lengths).sequence_length
-  known_lengths[n] = length
+  1.upto(1_000_000) do |n|
+    length = Collatz.new(n, known_lengths).sequence_length
+    known_lengths[n] = length
 
-  if length > result.length
-    result = Result.new(n, length)
+    if length > result.length
+      result = Result.new(n, length)
+    end
   end
-end
 
-puts result.n, result.length
+  puts result.n, result.length
+end

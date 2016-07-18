@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+require 'spec_helper'
 require 'problem028'
 
 describe '#corner_sum(length)' do

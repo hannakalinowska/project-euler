@@ -1,10 +1,12 @@
 #! /usr/bin/ruby
 
-values = []
-(2 .. 100).each do |a|
-  (2 .. 100).each do |b|
-    values << a ** b
+if __FILE__ == $0
+  values = []
+  (2 .. 100).each do |a|
+    (2 .. 100).each do |b|
+      values << a ** b
+    end
   end
-end
 
-puts values.uniq.size
+  puts values.uniq.size
+end

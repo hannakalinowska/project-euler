@@ -1,5 +1,5 @@
-require 'rspec'
-require_relative '014'
+require 'spec_helper'
+require 'problem014b'
 
 RSpec.describe Collatz do
   describe '#sequence_length' do

@@ -16,12 +16,14 @@ def largest_prime_factor(number)
   return number
 end
 
-root.downto(2) do |i|
-  if i.odd? || i == 2
-    if number % i == 0
-      lpf = largest_prime_factor(number/i)
-      max_lpf = lpf if max_lpf < lpf
+if __FILE__ == $0
+  root.downto(2) do |i|
+    if i.odd? || i == 2
+      if number % i == 0
+        lpf = largest_prime_factor(number/i)
+        max_lpf = lpf if max_lpf < lpf
+      end
     end
   end
+  puts max_lpf
 end
-puts max_lpf

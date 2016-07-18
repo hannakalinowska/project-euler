@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+require 'spec_helper'
 require 'problem018'
 
 describe '#max(tree, sum)' do
@@ -21,7 +21,7 @@ describe '#create_tree(row, column)' do
     tree = create_tree(triangle, 0, 0)
     tree.should be_a(Node)
     tree.value.should == 1
-    tree.leaf?.should be_true
+    tree.leaf?.should be_truthy
   end
 
   it "creates nodes and subtree when more rows" do

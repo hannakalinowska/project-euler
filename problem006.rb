@@ -8,5 +8,8 @@ def summed_squares(n)
   (1 .. n).map{|i| i * i}.reduce(:+)
 end
 
-number = 100
-puts squared_sum(number) - summed_squares(number)
+
+if __FILE__ == $0
+  number = 100
+  puts squared_sum(number) - summed_squares(number)
+end

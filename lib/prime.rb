@@ -1,6 +1,6 @@
 class Integer
   def prime?
-    return false if self < 1
+    return false if self <= 1
 
     square_root = (self ** 0.5).to_i
     2.upto(square_root) do |i|

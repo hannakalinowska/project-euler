@@ -54,5 +54,7 @@ def max(tree, sum)
   end
 end
 
-tree = create_tree(triangle, 0, 0)
-puts max(tree, 0)
+if __FILE__ == $0
+  tree = create_tree(triangle, 0, 0)
+  puts max(tree, 0)
+end

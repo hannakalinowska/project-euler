@@ -26,12 +26,15 @@ def prime_factors_for(number)
   prime_factors.flatten.sort
 end
 
-range = 1 .. 20
 
-prime_factors = []
+if __FILE__ == $0
+  range = 1 .. 20
 
-range.each do |n|
-  prime_factors << prime_factors_for(n).set_delete(prime_factors)
-  prime_factors.flatten!
+  prime_factors = []
+
+  range.each do |n|
+    prime_factors << prime_factors_for(n).set_delete(prime_factors)
+    prime_factors.flatten!
+  end
+  puts prime_factors.flatten.reduce(1, :*)
 end
-puts prime_factors.flatten.reduce(1, :*)

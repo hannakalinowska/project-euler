@@ -19,8 +19,10 @@ def circular_prime?(number)
   true
 end
 
-count = 0
-1.upto(999_999) do |number|
-  count += 1 if circular_prime?(number)
+if __FILE__ == $0
+  count = 0
+  1.upto(999_999) do |number|
+    count += 1 if circular_prime?(number)
+  end
+  puts count
 end
-puts count

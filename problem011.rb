@@ -53,23 +53,25 @@ def right_diagonal_subarray(index, array, length = 4)
   subarray.compact.length < length ? [] : subarray
 end
 
-max = 0
+if __FILE__ == $0
+  max = 0
 
-0.upto(19) do |i|
-  0.upto(19) do |j|
-    index = 20 * i + j
+  0.upto(19) do |i|
+    0.upto(19) do |j|
+      index = 20 * i + j
 
-    product = row_subarray(index, array).reduce(:*) || 0
-    max = product if product > max
+      product = row_subarray(index, array).reduce(:*) || 0
+      max = product if product > max
 
-    product = column_subarray(index, array).reduce(:*) || 0
-    max = product if product > max
+      product = column_subarray(index, array).reduce(:*) || 0
+      max = product if product > max
 
-    product = left_diagonal_subarray(index, array).reduce(:*) || 0
-    max = product if product > max
+      product = left_diagonal_subarray(index, array).reduce(:*) || 0
+      max = product if product > max
 
-    product = right_diagonal_subarray(index, array).reduce(:*) || 0
-    max = product if product > max
+      product = right_diagonal_subarray(index, array).reduce(:*) || 0
+      max = product if product > max
+    end
   end
+  puts max
 end
-puts max

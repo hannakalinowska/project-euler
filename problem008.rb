@@ -28,11 +28,13 @@ def product(number)
   end
 end
 
-max = 0
+if __FILE__ == $0
+  max = 0
 
-number.each_index do |index|
-  product = product(number[index .. index + 4])
-  max = product if product > max
+  number.each_index do |index|
+    product = product(number[index .. index + 4])
+    max = product if product > max
+  end
+
+  puts max
 end
-
-puts max
